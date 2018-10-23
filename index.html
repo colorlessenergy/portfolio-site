@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% include header.html
+  bold-desc="Hello! I write about web development and I like to bring designs to life."
+  description="I recently started my own company and love to face new challenges everyday !"
+  %}
+<section id="projects" class="projects">
+  <ul>
+    {% for project in site.projects %}
+    <a class="projects__link" href="{{ project.url }}">
+    <li class="project">
+      <div class="date">
+        <p class="date__project">
+          {{ project.published }}
+        </p>
+      </div>
+      <div class="project__image-wrapper">
+        <img class="project__image" src="{{ project.image }}" alt="{{ project.title }}">
+      </div>
+      <div class="project__description">
+        <div class="hide">
+          <p class="project__number">{{ forloop.index }}</p>
+
+          <p class="project__meta">
+            {{ project.meta }}
+          </p>
+
+          <p class="project__cta">See Case</p>
+        </div>
+
+        <div class="project__info">
+          <p class="project__desc hide">{{ project.description }}</p>
+          <h3 class="project__title">{{ project.title }}</h3>
+        </div>
+      </div>
+    </li>
+  </a>
+  {% endfor %}
+  </ul>
+</section>
+{% include footer.html %}
+<p class="top">go to the top</p>

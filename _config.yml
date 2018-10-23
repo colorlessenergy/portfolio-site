@@ -1,0 +1,7 @@
+baseurl: ''
+permalink: pretty
+exclude: ["_site", ".gitignore"]
+
+collections:
+  projects:
+    output: true
